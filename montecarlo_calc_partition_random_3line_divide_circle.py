@@ -51,6 +51,6 @@ def main():
     linecount=5
     for i in range(0,simulationCount):
         sum+=simulationOnce(linecount)
-    print(sum/simulationCount+linecount)
+    print(sum/simulationCount+linecount+1)
 
 main()
