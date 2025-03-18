@@ -48,7 +48,7 @@ def simulationOnce(lineCount=3):
 def main():
     simulationCount=1000000
     sum=0
-    linecount=5
+    linecount=3
     for i in range(0,simulationCount):
         sum+=simulationOnce(linecount)
     print(sum/simulationCount+linecount+1)
