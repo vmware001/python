@@ -38,7 +38,7 @@ class program:
         logPath = self.logDir / logName
         with open(logPath, "w") as f:
             f.write(self.writeContent)
-        self.currentLog = None  # 因为用了 with，不需要手动管理
+        self.currentLog = None #close file
 
     def pingOnce(self):
         commandLine=["ping","-c","1",domain]
