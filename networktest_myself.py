@@ -77,14 +77,14 @@ class program:
         )
 
 def main():
-    monitor = program()  # 创建监控实例
+    monitor = program() 
     try:
         while True:
-            monitor.runInRound()  # 执行一轮ping测试
+            monitor.runInRound()
             print("Finished one round test, "+str(pingsPerRound)+" ping\n")
     except KeyboardInterrupt:
         print("\nTerminating...")
-        if monitor.currentLog:  # 确保日志文件关闭
+        if monitor.currentLog:
             monitor.currentLog.close()
 
 main()
