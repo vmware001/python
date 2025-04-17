@@ -42,7 +42,10 @@ class program:
 
     def pingOnce(self):
         commandLine=["ping","-c","1",domain]
-        result = subprocess.run(commandLine, capture_output=True, text=True, timeout=overtimeMaxTime) #exec command and catch results
+        try:
+            result = subprocess.run(commandLine, capture_output=True, text=True, timeout=overtimeMaxTime) #exec command and catch results
+        except subprocess.TimeoutExpired:
+            return -1
         if match := re.search(r"时间=(\d+\.?\d*)\s?毫秒", result.stdout): #match regex(zh_cn)
             delay = float(match.group(1))
             self.maxDelay = max(self.maxDelay, delay)
